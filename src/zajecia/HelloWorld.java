@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class HelloWorld {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(System.in);
 
 //        System.out.println("Day");
 //        int dzien = scanner.nextInt();
@@ -17,7 +17,7 @@ public class HelloWorld {
 //        int rok = scanner.nextInt();
 //
 //        displayDate(dzien, miesiac, rok);
-        int[] array = {10, 0, -4, 1, -2, 7};
+//        int[] array = {10, 0, -4, 1, -2, 7};
 //        int minValue = minFromArray(array);
 
 //        minFromArray(array);
@@ -31,9 +31,9 @@ public class HelloWorld {
 //
 //        int rozpietosc = span(array);
 //        System.out.println(rozpietosc);
-        revers(array);
+//        revers(array);
+        int[] array = getArrayFromUser();
         statistics(array);
-
     }
 
     public static void displayDate(int day, int month, int year) {
@@ -106,8 +106,19 @@ public class HelloWorld {
             } else {
                 System.out.print(array[i] + ", ");
             }
-
         }
+    }
+
+    public static int[] getArrayFromUser() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj rozmiar tablicy");
+        int size = scanner.nextInt();
+        int[] array = new int[size];
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("Podaj " + (i+1) + ". liczbe");
+            array[i] = scanner.nextInt();
+        }
+        return array;
     }
 }
 
