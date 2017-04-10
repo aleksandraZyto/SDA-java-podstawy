@@ -33,7 +33,9 @@ public class HelloWorld {
 //        System.out.println(rozpietosc);
 //        revers(array);
         int[] array = getArrayFromUser();
-        statistics(array);
+        displayArray(getArrayFromUser());
+        displayReversedArray(array);
+//        statistics(array);
     }
 
     public static void displayDate(int day, int month, int year) {
@@ -115,10 +117,38 @@ public class HelloWorld {
         int size = scanner.nextInt();
         int[] array = new int[size];
         for (int i = 0; i < array.length; i++) {
-            System.out.println("Podaj " + (i+1) + ". liczbe");
+            System.out.println("Podaj " + (i + 1) + ". liczbe");
             array[i] = scanner.nextInt();
         }
         return array;
+    }
+
+    public static void displayArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (i != array.length - 1) {
+                System.out.print(array[i] + ", ");
+            } else {
+                System.out.println(array[i]);
+            }
+        }
+    }
+
+    public static int[] reverseArray(int[] array) {
+        int[] newArray = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+//            newArray[i] = array[array.length - 1 - i];
+            newArray[array.length-i-1] = array[i];
+        }
+        return (newArray);
+    }
+
+    public static void displayReversedArray(int[] array)
+    {
+        displayArray(reverseArray(array));
+        for(int i =0;i<array.length;i++)
+        {
+            System.out.print(array[i]+", ");
+        }
     }
 }
 
