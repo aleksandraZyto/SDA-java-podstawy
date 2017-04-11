@@ -20,7 +20,8 @@ public class Zajecia6 {
 //
 //        int[] array = {1, 5, 2, 3, 5};
 //        sumUntil(array, 10);
-        game();
+//        game();
+        numberOfDigits(1000);
     }
 
     public static void printPowersOf2(int number) {
@@ -66,7 +67,7 @@ public class Zajecia6 {
                 bound = hit;
             } else if (hit < answer) {
                 offset = hit;
-                bound = bound -hit;
+                bound = bound - hit;
             }
             counter++;
         }
@@ -74,7 +75,13 @@ public class Zajecia6 {
         return counter;
     }
 
-//    public static int numberOfDigits(int number){
-//        return;
-//    }
+    public static int numberOfDigits(int number) {
+        int iloscZnakow = 0;
+        while(number>0){
+            number/=10;
+            iloscZnakow++;
+        }
+        System.out.println(iloscZnakow);
+        return iloscZnakow;
+    }
 }
