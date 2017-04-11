@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by RENT on 2017-04-06.
  */
-public class HelloWorld {
+public class Zajecia4 {
     public static void main(String[] args) {
         //Scanner scanner = new Scanner(System.in);
 
