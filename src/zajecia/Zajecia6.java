@@ -18,10 +18,12 @@ public class Zajecia6 {
 //        System.out.println("counter");
 //        printPowersOf2(32);
 //
-//        int[] array = {1, 5, 2, 3, 5};
+        int[] array = {1, 5, 2, 3, 5};
 //        sumUntil(array, 10);
 //        game();
-        numberOfDigits(1000);
+//        numberOfDigits(1000);
+//        numberToArray(123);
+        arrayToNumber(array);
     }
 
     public static void printPowersOf2(int number) {
@@ -77,11 +79,42 @@ public class Zajecia6 {
 
     public static int numberOfDigits(int number) {
         int iloscZnakow = 0;
-        while(number>0){
-            number/=10;
+        while (number > 0) {
+            number /= 10;
             iloscZnakow++;
         }
         System.out.println(iloscZnakow);
         return iloscZnakow;
+    }
+
+    public static int sumOfDigits(int number) {
+        int sum = 0;
+        while (number > 0) {
+            sum += number % 10;
+            number /= 10;
+        }
+        return sum;
+    }
+
+    public static int[] numberToArray(int number) {
+        int size = numberOfDigits(number);
+        int[] array = new int[size];
+        for (int i = array.length - 1; i >= 0; i--) {
+            array[i] = number % 10;
+            number /= 10;
+        }
+        Zajecia4.displayArray(array);
+        return array;
+    }
+
+    public static int arrayToNumber(int[] array) {
+        int number = 0;
+        int mn = 1;
+        for (int i = array.length - 1; i >= 0; i--) {
+            number = number + (array[i] * mn);
+            mn *= 10;
+        }
+        System.out.println(number);
+        return number;
     }
 }
