@@ -26,14 +26,16 @@ public class Zajecia7 {
 //        displayMatrix(matrix2);
 //        displayMatrix(biggerValues(matrix1, matrix2));
 //        flip(oldMatrix);
-
-        int[][] matrix = fillWithRandomNumbers(3,3);
-        for (int i = 0; i < 100; i++) {
-            matrix = biggerValues(matrix, fillWithRandomNumbers(3,3));
-            if(i%10==0){
-                displayMatrix(matrix);
-            }
-        }
+//        int[][] matrix2 = {{1,2,3},{4,5,6}};
+//        int[][] matrix1 = {{1,2},{3,4},{5,6}};
+//        displayMatrix(produkt(matrix1,matrix2));
+//        int[][] matrix = fillWithRandomNumbers(3,3);
+//        for (int i = 0; i < 100; i++) {
+//            matrix = biggerValues(matrix, fillWithRandomNumbers(3,3));
+//            if(i%10==0){
+//                displayMatrix(matrix);
+//            }
+//        }
 
     }
 
