@@ -12,8 +12,11 @@ public class Zajecia10 {
 //        multiplyDigits(123);
 //        int[][] ints = randomMatrix(3, 10, -5);
 //        System.out.println(avg(ints));
-        System.out.println(find("ala ma kota", "kota"));
+//        System.out.println(find("ala ma kota", "kota"));
+        System.out.println(checkRoundBraces("(())"));
+        System.out.println(checkRoundBraces("(()("));
     }
+
 
     public static int find(String message, char sentence) {
         char[] charArray = message.toCharArray();
@@ -42,13 +45,30 @@ public class Zajecia10 {
         return a;
     }
 
-//    public static int countAll(String message, String sentence) {
-//        char[] charArray = message.toCharArray();
-//        int i = 0;
-//        while (i < charArray.length) {
-//            while
-//        }
-//    }
+    public static boolean checkRoundBraces(String message) {
+        char[] charArray = message.toCharArray();
+        int counter = 0;
+        int i = 0;
+        while ((counter >= 0) && i < charArray.length) {
+            if (charArray[i] == '(') {
+                counter++;
+            } else if (charArray[i] == ')') {
+                counter--;
+            }
+            i++;
+        }
+        return counter == 0;
+    }
+
+    public static int countAll(String message, String sentence) {
+        int counter = 0;
+        while (find(message, sentence) != -1) {
+            counter++;
+            message = message.substring(find(message, sentence) + 1);
+
+        }
+        return counter;
+    }
 
 
     //Ala ma kota, kota -> 7
