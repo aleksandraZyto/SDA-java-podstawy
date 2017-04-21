@@ -10,9 +10,9 @@ public class Zajecia10 {
 //        stringStatistics("ala");
 //        Zajecia4.displayArray(stringStatistics("Ala ma kota"));
 //        multiplyDigits(123);
-        int[][] ints = randomMatrix(3, 10, -5);
-        System.out.println(avg(ints));
-
+//        int[][] ints = randomMatrix(3, 10, -5);
+//        System.out.println(avg(ints));
+        System.out.println(find("ala ma kota", "kota"));
     }
 
     public static int find(String message, char sentence) {
@@ -51,10 +51,24 @@ public class Zajecia10 {
 //    }
 
 
-//    //Ala ma kota, kota -> 7
-//    public static int find(String message, String sentence){
-//        return 0;
-//    }
+    //Ala ma kota, kota -> 7
+    public static int find(String message, String sentence) {
+        char[] charArray = message.toCharArray();
+        char[] sentenceArray = sentence.toCharArray();
+        boolean flag = true;
+        int i = 0;
+        while (flag && i <= charArray.length - sentenceArray.length) {
+            int j = 0;
+            while (j < sentenceArray.length && charArray[i + j] == sentenceArray[j]) {
+                j++;
+                if (j == sentenceArray.length) {
+                    flag = false;
+                }
+            }
+            i++;
+        }
+        return flag ? -1 : i - 1;
+    }
 
     public static int[] stringStatistics(String message) {
         char[] charArray = message.toCharArray();
