@@ -15,7 +15,8 @@ public class Application {
 //            System.out.println(books[i]);
 //        }
 
-        System.out.println(bookstore.getBook("412843176491"));
+//        System.out.println(bookstore.getBook("412843176491"));
+
     }
 
     public static void insertExampleData(Bookstore bookstore){
@@ -29,7 +30,7 @@ public class Application {
             pantadeusz[0]="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
             pantadeusz[1]="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
             pantadeusz[2]="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-            book.content = pantadeusz;
+            book.setContent(pantadeusz);
 
             Book book2 = new Book("pan tadeusz", "adam mickiewicz", "21.02.3000", "012849176491");
 //        book2.author="mickiewicz";
@@ -41,8 +42,7 @@ public class Application {
             ogniemimieczen[0]="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
             ogniemimieczen[1]="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
             ogniemimieczen[2]="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-            book2.content = ogniemimieczen;
-
+            book2.setContent(ogniemimieczen);
             Book book3 = new Book("pan tadeusz", "adam mickiewicz", "21.02.3000", "412849166491");
 //        book3.author="mickiewicz";
 //        book3.description="poem";
@@ -53,7 +53,7 @@ public class Application {
             dziady[0]="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
             dziady[1]="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
             dziady[2]="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-            book3.content = dziady;
+            book3.setContent(dziady);
 
             bookstore.add(book);
             bookstore.add(book2);

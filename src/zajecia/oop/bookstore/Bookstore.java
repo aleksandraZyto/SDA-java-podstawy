@@ -6,7 +6,7 @@ package zajecia.oop.bookstore;
 public class Bookstore {
 
     public Book[] books;
-    public int numberOfBooks;
+    private int numberOfBooks;
 
     public Bookstore() {
         this.books = new Book[100];
@@ -23,6 +23,18 @@ public class Bookstore {
         return valueToReturn;
     }
 
+    public int getNumberOfBooks() {
+        return numberOfBooks;
+    }
+
+    public Book[] getBooks() {
+        Book[] booksToReturn = new Book[numberOfBooks];
+        for (int i = 0; i < this.numberOfBooks; i++) {
+            booksToReturn[i] = books[i];
+        }
+        return books;
+    }
+
     public void showBooks() {
         for (int i = 0; i < numberOfBooks + 1; i++) {
             System.out.println(books[i]);
@@ -32,7 +44,7 @@ public class Bookstore {
     public int getNumberOfBooks(String author) {
         int counter = 0;
         for (int i = 0; i < numberOfBooks; i++) {
-            if (books[i].author.equals(author)) {
+            if (books[i].getAuthor().equals(author)) {
                 counter++;
             }
         }
@@ -43,7 +55,7 @@ public class Bookstore {
         Book[] booksToReturn = new Book[getNumberOfBooks(author)];
         int index = 0;
         for (int i = 0; i < this.numberOfBooks; i++) {
-            if (books[i].author.equals(author)) {
+            if (books[i].getAuthor().equals(author)) {
                 booksToReturn[index] = books[i];
                 index++;
             }
@@ -55,7 +67,7 @@ public class Bookstore {
         Book bookWithISBN = null;
         int i = 0;
         while (i < this.numberOfBooks && bookWithISBN == null) {
-            if (books[i].ISBN.equals(ISBN)) {
+            if (books[i].getISBN().equals(ISBN)) {
                 bookWithISBN = books[i];
             }
             i++;
