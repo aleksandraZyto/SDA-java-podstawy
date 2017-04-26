@@ -64,7 +64,7 @@ public class QuizInterface {
     public void showResults(Result[] results){
         System.out.println("Hall of fame");
         for (int i = 0; i < results.length; i++) {
-            System.out.println((i+1) +". "+results[i].getPlayerName()+ "\t" +results[i].getResult());
+            System.out.println((i+1) +". "+results[i].getPlayerName()+"\t"+results[i].getResult());
         }
         scanner.nextLine();
     }
@@ -73,9 +73,13 @@ public class QuizInterface {
         System.out.println("Hall of fame");
         for (int i = 0; i < topResults.length; i++) {
             System.out.println((i+1)+". ");
-            if(topResults!=null){
+            if(topResults[i]!=null){
                 System.out.println(topResults[i].getPlayerName()+"\t"+ topResults[i].getResult());
             }
         }
+    }
+
+    public void afterGamesEnded(){
+        System.out.println("Game ended.");
     }
 }
