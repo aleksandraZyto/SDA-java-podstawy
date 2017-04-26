@@ -32,7 +32,7 @@ public class Quiz {
             quizInterface.showResult(playerName, correctAnswerCounter);
 
         } else if (decision == 2) {
-            quizInterface.showResults(resultsRepository.getAllResults());
+            quizInterface.showResults(resultsRepository.getTopResults(10));
         } else {
             System.out.println("end of the game");
         }
